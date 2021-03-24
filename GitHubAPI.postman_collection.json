@@ -27,8 +27,7 @@
 					"listen": "prerequest",
 					"script": {
 						"exec": [
-							"var random = Math.random().toString(36).substring(2);\r",
-							"var repositoryName = \"PostmanRepository-\" + random;\r",
+							"var repositoryName = \"PostmanRepository-\" + pm.variables.replaceIn('{{$randomFirstName}}');\r",
 							"pm.environment.set(\"repositoryName\", repositoryName);"
 						],
 						"type": "text/javascript"
